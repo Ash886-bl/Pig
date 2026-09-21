@@ -1,0 +1,60 @@
+import random
+player1 = 0
+player2 = 0
+rolltotal = 0
+rolltotal1 = 0
+
+while player1<100 and player2<100:
+  choice = input("Roll, yes or no?")
+
+  # Player 1's turn
+  choice = input("Player 1: Roll, yes or no? ")
+
+  rolltotal = 0
+
+  while choice == "y":
+      roll = random.randint(1, 6)
+
+      if roll == 1:
+          print("You rolled a 1, next player's turn")
+          rolltotal = 0
+          break
+
+      rolltotal += roll
+      print("You rolled a", roll)
+      print("You currently have", rolltotal, "this turn")
+
+      choice = input("Roll, yes or no? ")
+
+  player1 += rolltotal
+  print("Player 1's score:", player1)
+
+  if player1 >= 100:
+      print("Player 1 wins!")
+      break
+
+  # Player 2's turn
+  choice1 = input("Player 2: Roll, yes or no? ")
+
+  rolltotal1 = 0
+
+  while choice1 == "y":
+      roll = random.randint(1, 6)
+
+      if roll == 1:
+          print("You rolled a 1, next player's turn")
+          rolltotal1 = 0
+          break
+
+      rolltotal1 += roll
+      print("You rolled a", roll)
+      print("You currently have", rolltotal1, "this turn")
+
+      choice1 = input("Roll, yes or no? ")
+
+  player2 += rolltotal1
+  print("Player 2's score:", player2)
+
+  if player2 >= 100:
+      print("Player 2 wins!")
+      break
